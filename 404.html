@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Page Not Found</title>
+    <script type="text/javascript">
+      // Ricostruisce l'URL originale e lo passa a index.html
+      const redirect = location.pathname + location.search + location.hash;
+      window.location.replace('/index.html?redirect=' + encodeURIComponent(redirect));
+    </script>
+  </head>
+  <body>
+    <h1>Redirecting…</h1>
+  </body>
+</html>

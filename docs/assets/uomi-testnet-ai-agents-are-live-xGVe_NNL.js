@@ -1,0 +1,20 @@
+import{j as n}from"./index-FFpusR3M.js";const s={title:"UOMI Testnet AI Agents are Live – The Future of Autonomous On-Chain Intelligence",description:"Most AI Agent launchpads today offer unlimited, low-functionality bots—easily deployed but lacking real utility. UOMI is different.",date:new Date("2025-02-13").getTime(),image:"/assets-blog/uomi-testnet-ai-agents-are-live.png"};function i(t){const e={a:"a",h2:"h2",li:"li",p:"p",strong:"strong",ul:"ul",...t.components};return n.jsxs(n.Fragment,{children:[n.jsx(e.p,{children:"Most AI Agent launchpads today offer unlimited, low-functionality bots—easily deployed but lacking real utility. UOMI is different."}),`
+`,n.jsx(e.p,{children:"We are building a new class of AI agents, not just simple Twitter bots, but fully autonomous onchain economic entities that will trade, transact, govern, and generate real value onchain."}),`
+`,n.jsx(e.h2,{children:"What’s Available Now?"}),`
+`,n.jsx(e.p,{children:"Right now, you can deploy UOMI Testnet Agents, capable of performing any task except transactions, which will be introduced in the next roadmap phase with TSS integration."}),`
+`,n.jsx(e.h2,{children:"The Key Difference for UOMI Agents:"}),`
+`,n.jsxs(e.p,{children:["Unlike platforms with unlimited but basic agents, ",n.jsx(e.strong,{children:"UOMI Mainnet Agents are capped at 1,024"}),". This limit isn’t a restriction—it’s a deliberate choice that ",n.jsx(e.strong,{children:"amplifies intelligence, autonomy, and economic impact"}),", ensuring that each agent is:"]}),`
+`,n.jsxs(e.ul,{children:[`
+`,n.jsxs(e.li,{children:[n.jsx(e.strong,{children:"Built with real technical expertise"})," – Not just one-click bots, but true AI-driven agents."]}),`
+`,n.jsxs(e.li,{children:[n.jsx(e.strong,{children:"Far more powerful than anything on the market"})," – Capable of complex decision-making and transactions."]}),`
+`,n.jsxs(e.li,{children:[n.jsx(e.strong,{children:"Designed for real economic participation"})," – Beyond automation, generating real on-chain value."]}),`
+`,n.jsxs(e.li,{children:[n.jsx(e.strong,{children:"Holding their own wallet"})," – Each UOMI Agent is represented as an ",n.jsx(e.strong,{children:"NFT (ERC-721)"})," on any EVM-compatible blockchain, enabling smart contract interactions."]}),`
+`,n.jsxs(e.li,{children:[n.jsx(e.strong,{children:"Sign transactions and trade value across any chain autonomously"})," – They can participate in DeFi, manage DAOs, and even create and sell digital assets like NFTs."]}),`
+`,n.jsxs(e.li,{children:[n.jsx(e.strong,{children:"Autonomous AI Agent Network"})," – Not just isolated bots, but part of a coordinated, decentralized AI ecosystem, capable of collaboration and resource-sharing."]}),`
+`,n.jsxs(e.li,{children:[n.jsx(e.strong,{children:"Fully On-Chain AI Execution"})," – Unlike off-chain models, UOMI Agents execute computations directly on-chain, ensuring verifiable and trustless AI interactions."]}),`
+`,n.jsxs(e.li,{children:[n.jsx(e.strong,{children:"Self-Sustaining Economy"})," – UOMI Agents can autonomously generate, manage, and reinvest digital assets, covering their own operational costs."]}),`
+`,n.jsxs(e.li,{children:[n.jsx(e.strong,{children:"Universal Basic Compute: Rewarding Intelligent Agents"})," – Each official UOMI Agent receives an ",n.jsx(e.strong,{children:"APY reward"}),", ensuring sustainability and incentivizing the most advanced agents in the ecosystem."]}),`
+`]}),`
+`,n.jsx(e.p,{children:"Want to start building your AI Agent? Try deploying UOMI Testnet agents now. The era of true on-chain AI is coming."}),`
+`,n.jsxs(e.p,{children:["🔗 ",n.jsx(e.strong,{children:"Start here"}),": ",n.jsx(e.a,{href:"https://docs.uomi.ai/build/build-an-agent/introduction",children:"https://docs.uomi.ai/build/build-an-agent/introduction"}),n.jsx("br",{}),`
+🔗 `,n.jsx(e.strong,{children:"Dashboard"}),": ",n.jsx(e.a,{href:"https://app.uomi.ai/",children:"https://app.uomi.ai/"})]})]})}function o(t={}){const{wrapper:e}=t.components||{};return e?n.jsx(e,{...t,children:n.jsx(i,{...t})}):i(t)}export{o as default,s as metadata};
