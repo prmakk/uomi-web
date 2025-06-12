@@ -1,0 +1,220 @@
+@import "tailwindcss";
+
+h1, h2, h3, h4, h5, h6, div {
+  word-break: break-word; /* fallback sensato */
+  overflow-wrap: break-word; /* questo è il corretto */
+  white-space: normal;
+  hyphens: none;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(100%);
+    opacity: 1;
+  }
+}
+
+@keyframes wave-vertical {
+  0%, 100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(100%);
+    opacity: 1;
+  }
+}
+
+.animate-wave {
+  animation: wave 8s ease-in-out infinite;
+}
+
+.animate-wave-slow {
+  animation: wave 12s ease-in-out infinite;
+}
+
+.animate-wave-slower {
+  animation: wave 16s ease-in-out infinite;
+}
+
+.animate-wave-vertical {
+  animation: wave-vertical 10s ease-in-out infinite;
+}
+
+.animate-wave-vertical-slow {
+  animation: wave-vertical 14s ease-in-out infinite;
+}
+
+.animate-wave-vertical-slower {
+  animation: wave-vertical 18s ease-in-out infinite;
+}
+
+body {
+  background-color: black;
+  color: white;
+  scrollbar-width: thin; /* Possibili valori: auto, thin */
+  scrollbar-color: #888 transparent; /* thumb colore | track colore */
+}
+
+/* Personalizza la larghezza della scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Colore del track della scrollbar (il percorso) */
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+/* Colore del thumb della scrollbar (la parte che si muove) */
+::-webkit-scrollbar-thumb {
+  background-color: #000; /* Colore */
+  border-radius: 6px; /* Arrotondamento degli angoli */
+  border: 3px solid #000; /* Spazio attorno al thumb */
+}
+
+/* Cambia colore al passaggio del mouse */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #888;
+}
+
+.PageContent h2,
+.PageContent h3,
+.PageContent h4,
+.PageContent h5,
+.PageContent h6,
+.PageContent p,
+.PageContent ul,
+.PageContent ol,
+.PageContent li {
+  font-weight: medium;
+  margin-bottom: 40px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  text-align: justify;
+}
+
+.PageContent h2,
+.PageContent h3,
+.PageContent h4,
+.PageContent h5,
+.PageContent h6 {
+  text-align: center;
+  font-family: "Fira Code", monospace;
+  font-weight: lighter;
+}
+
+.PageContent h2,
+.PageContent h3 {
+  font-size: 20px;
+}
+
+.PageContent h4,
+.PageContent h5,
+.PageContent h6 {
+  font-size: 18px;
+}
+
+.PageContent img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.PageContent ul {
+  list-style-type: circle;
+  padding-left: 20px;
+}
+
+.PageContent ol {
+  list-style-type: decimal;
+  padding-left: 20px;
+}
+
+.PageContent li {
+  margin-bottom: 10px;
+}
+
+.PageContent li p {
+  margin-bottom: 5px;
+}
+
+.PageLatex {
+  overflow-y: hidden;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.text-animation-pulse {
+  animation: pulse 10s infinite;
+}
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.loader {
+  /* change color here */
+  color: #fff;
+}
+.loader,
+.loader div {
+  box-sizing: border-box;
+}
+.loader {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.loader div {
+  position: absolute;
+  border: 4px solid currentColor;
+  opacity: 1;
+  border-radius: 50%;
+  animation: loader 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.loader div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes loader {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 8px;
+    height: 8px;
+    opacity: 0;
+  }
+  4.9% {
+    top: 36px;
+    left: 36px;
+    width: 8px;
+    height: 8px;
+    opacity: 0;
+  }
+  5% {
+    top: 36px;
+    left: 36px;
+    width: 8px;
+    height: 8px;
+    opacity: 1;
+  }
+  100% {
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    opacity: 0;
+  }
+}
