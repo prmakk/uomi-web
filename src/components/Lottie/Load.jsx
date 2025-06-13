@@ -25,7 +25,7 @@ const Load = () => {
     // with the fetched data
   
     return (
-      <div className="absolute top-10 right-5 w-[28%] overflow-hidden opacity-70 pointer-events-none">
+      <div className="absolute top-10 right-5 w-[24%] overflow-hidden opacity-70 pointer-events-none">
         <Lottie
           animationData={data}
           loop={true}
