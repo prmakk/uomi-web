@@ -1,4 +1,12 @@
-/** @type {import('next').NextConfig} */
+/** @typeconst nextConfig = {
+  reactStrictMode: true,
+  output: 'export', // Riabilitato per export statico
+  trailingSlash: true,
+  images: {
+    unoptimized: true
+  },
+  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
+}'next').NextConfig} */
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
   options: {
@@ -9,7 +17,7 @@ const withMDX = require('@next/mdx')({
 
 const nextConfig = {
   reactStrictMode: true,
-  // output: 'export', // Commentato temporaneamente per permettere route dinamiche
+  output: 'export', 
   trailingSlash: true,
   images: {
     unoptimized: true

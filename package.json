@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
+    "@mdx-js/mdx": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^15.3.3",
     "@react-three/drei": "^10.0.6",
@@ -20,6 +21,7 @@
     "@tailwindcss/postcss": "^4.1.10",
     "framer-motion": "^12.7.4",
     "fs": "^0.0.1-security",
+    "gray-matter": "^4.0.3",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.495.0",
     "next": "^15.0.0",

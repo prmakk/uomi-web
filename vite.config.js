@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [tailwindcss(), react(), mdx()],
   base: '/',
   build: {
-    outDir: 'docs',
+    outDir: 'out',
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
