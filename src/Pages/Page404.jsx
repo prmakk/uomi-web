@@ -1,7 +1,6 @@
 import React from "react";
 import { ArrowLeft, Home, Search } from "lucide-react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
 const NotFoundPage = () => {
   // Animation variants (similar to those in EcosystemSection)

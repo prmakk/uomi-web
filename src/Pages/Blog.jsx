@@ -1,8 +1,11 @@
+'use client';
 import React, { useMemo, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import PageContainer from '../components/PageContainer';
 import { getPostsData } from '../lib/blog';
+
+
 
 export default function Blog() {
   const [posts, setPosts] = useState([]);
@@ -31,7 +34,7 @@ export default function Blog() {
             {postsList.map((post) => (
               <li key={post.id}>
                 <Link 
-                  to={`/blog/${post.id}`}
+                  href={`/blog/${post.id}`}
                   className="block hover:text-[#dffe00] transition-colors duration-300"
                 >
                   <h2 className="text-center font-bold mb-2 uppercase">

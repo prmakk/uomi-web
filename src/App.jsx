@@ -34,7 +34,7 @@ function App() {
 
   return (
     <div className={`min-h-screen bg-black text-white`}>
-      <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+      {/* <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} /> */}
       
       <Routes>
         <Route path="*" element={<Page404 />} />

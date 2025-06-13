@@ -1,37 +1,37 @@
+'use client'
+
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import { getPostData } from '../lib/blog';
 import PageContainer from '../components/PageContainer';
 
-const postComponents = import.meta.glob('../posts/*.mdx');
-
-export default function BlogPost() {
-  const { postId } = useParams();
+export default function BlogPost({ postId }) {
   const [post, setPost] = useState(null);
   const [MDXComponent, setMDXComponent] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (!postId) return;
 
     const loadPost = async () => {
-      const postData = await getPostData(postId);
-      setPost(postData);
-
-      const path = `../posts/${postId}.mdx`;
-      if (postComponents[path]) {
-        const mod = await postComponents[path]();
-        setMDXComponent(() => mod.default);
-      } else {
-        console.error(`Post component not found for path: ${path}`);
+      try {
+        const postData = await getPostData(postId);
+        if (postData) {
+          setPost(postData);
+          if (postData.content) {
+            setMDXComponent(() => postData.content);
+          }
+        }
+      } catch (error) {
+        console.error('Error loading post:', error);
+      } finally {
+        setLoading(false);
       }
     };
 
     loadPost();
   }, [postId]);
 
-  const dateString = post ? new Date(post.date).toLocaleDateString() : '';
-
-  if (!post || !MDXComponent) {
+  if (loading) {
     return (
       <div className="dark bg-black text-white min-h-screen">
         <PageContainer>
@@ -40,6 +40,18 @@ export default function BlogPost() {
       </div>
     );
   }
+
+  if (!post || !MDXComponent) {
+    return (
+      <div className="dark bg-black text-white min-h-screen">
+        <PageContainer>
+          <div className="text-center py-12">Post not found</div>
+        </PageContainer>
+      </div>
+    );
+  }
+
+  const dateString = post.date ? new Date(post.date).toLocaleDateString() : '';
 
   return (
     <div className="dark bg-black text-white min-h-screen">

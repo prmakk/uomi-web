@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { ChevronDown, Menu } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+'use client'
+import { useState, useEffect, useRef } from "react"
+import Link from "next/link"
+import { ChevronDown, Menu } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
 
 // App & Infrastructure - replaces 📱export const AppIcon = () => (
 
@@ -361,15 +363,20 @@ const Navbar = () => {
   }, []);
 
   // Click outside handler to close menus
-  useEffect(() => {
-    const handleClickOutside = () => {
+ const dropdownRef = useRef(null);
+
+useEffect(() => {
+  const handleClickOutside = (e) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
       setActiveMenu(null);
-    };
+    }
+  };
 
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
-  }, []);
-
+  document.addEventListener("mousedown", handleClickOutside);
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+  };
+}, []);
   // Handle dropdown click
   const handleDropdownClick = (e, menuName) => {
     e.stopPropagation();
@@ -390,7 +397,7 @@ const Navbar = () => {
   const themeStyles = {
     bg: "bg-black",
     //text should never break, no new lines
-    text: "text-white whitespace-nowrap break-keep",
+    text: "text-white",
     textSecondary: "text-gray-300",
     border: "border-zinc-800",
     dropdown: "bg-zinc-900 border-zinc-800",
@@ -440,12 +447,12 @@ const Navbar = () => {
                   <AnimatePresence>
                     {activeMenu === menuName && (
                       <motion.div
+                        ref={dropdownRef}
                         initial={{ opacity: 0, y: 8 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 8 }}
                         transition={{ duration: 0.15 }}
                         className={`absolute left-1/2 transform -translate-x-1/2 mt-2 rounded-xl border shadow-lg ${themeStyles.dropdown} z-50`}
-                        onClick={(e) => e.stopPropagation()}
                         style={{
                           minWidth: "280px",
                           boxShadow: isDarkMode
