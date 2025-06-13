@@ -81,6 +81,8 @@ const Partners = ({ isDarkMode = true }) => {
               backgroundColor: "#dffe00",
               boxShadow: "0 4px 6px -1px rgba(223, 254, 0, 0.2)",
             }}
+            onClick={() => window.location.href = "mailto:oscar@uomi.ai"
+            }
           >
             <span>Partner With Us</span>
             <ArrowRight size={16} />
