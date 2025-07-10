@@ -286,8 +286,7 @@ const menuItems = {
             label: "UOMI Grants",
             description:
               "Pitch your startup to win cash prizes, VC funding and marketing.",
-            link: "/#",
-            comingSoon: true
+            link: "/grants",
           },
         ],
       },

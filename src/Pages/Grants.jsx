@@ -140,15 +140,11 @@ const UomiGrants = () => {
   const faqItems = [
     {
       question: "What is the UOMI Grants Program?",
-      answer: "The UOMI Grants Program provides funding to developers and teams building innovative decentralized applications on the UOMI network. The program aims to support projects that leverage OPoC consensus for AI computation, fostering a vibrant ecosystem of AI-powered DApps."
-    },
-    {
-      question: "What is the Community Treasury?",
-      answer: "The UOMI Community Treasury is a decentralized fund managed by the community through governance. It allocates resources to projects that advance the UOMI ecosystem through grants, investments, and other funding mechanisms."
+      answer: "The UOMI Grants Program provides funding to developers and teams building innovative decentralized applications on the UOMI Network. The program aims to support projects that leverage OPoC consensus for AI computation, fostering a vibrant ecosystem of AI-powered DApps."
     },
     {
       question: "Which projects are eligible to apply?",
-      answer: "Any project building on the UOMI network is eligible to apply for a grant. This includes DeFi applications, games, marketplaces, social platforms, NFT projects, DAOs, identity solutions, content platforms, and more. The main requirement is that the project utilizes UOMI's infrastructure and contributes to the ecosystem's growth."
+      answer: "Any project building on the UOMI Network is eligible to apply for a grant. This includes DeFi applications, games, marketplaces, social platforms, NFT projects, DAOs, identity solutions, content platforms, and more. The main requirement is that the project utilizes UOMI's infrastructure and contributes to the ecosystem's growth."
     },
     {
       question: "How do I apply for a grant?",
@@ -201,7 +197,7 @@ const UomiGrants = () => {
             className="text-xl max-w-2xl mx-auto mt-8"
           >
             Empowering developers to build the next generation of decentralized 
-            applications powered by the UOMI network.
+            applications powered by the UOMI Network.
           </motion.p>
           
           {/* Prominently featured amount */}
