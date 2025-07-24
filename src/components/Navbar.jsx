@@ -1,7 +1,9 @@
 'use client'
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
-import { ChevronDown, Menu } from "lucide-react"
+
+
+import { ChevronDown, Menu, X, Calendar  } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
 // App & Infrastructure - replaces 📱export const AppIcon = () => (
@@ -346,6 +348,135 @@ const menuItems = {
   },
 };
 
+
+const TGEAnnouncementBar = () => {
+  const [isVisible, setIsVisible] = useState(true);
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
+
+  // Data TGE - 10 settembre 2025
+  const tgeDate = new Date('2025-09-10T00:00:00Z');
+
+  useEffect(() => {
+    const calculateTimeLeft = () => {
+      const now = new Date();
+      const difference = tgeDate.getTime() - now.getTime();
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        setTimeLeft({ days, hours, minutes, seconds });
+      } else {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      }
+    };
+
+    calculateTimeLeft();
+    const timer = setInterval(calculateTimeLeft, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  if (!isVisible) return null;
+
+  const formatNumber = (num) => num.toString().padStart(2, '0');
+
+  return (
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -10 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+        className="relative bg-black/95 backdrop-blur-sm border-b border-white/5"
+      >
+        {/* Animated gradient overlay */}
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-r from-transparent via-[#c8e500]/20 to-transparent"
+          animate={{ x: [-200, 1200] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+        />
+        <div className="max-w-7xl mx-auto px-4 py-2.5">
+          <div className="flex items-center justify-center relative">
+            {/* Contenuto centrato */}
+            <div className="flex items-center gap-8">
+              {/* Info TGE */}
+              <div className="flex items-center gap-3">
+                <span className="text-white font-medium text-sm">
+                  UOMI TOKEN TGE
+                </span>
+                <div className="w-1 h-1 rounded-full bg-[#c8e500]"></div>
+                <span className="text-[#c8e500] font-mono text-sm">
+                  Sep 10, 2025
+                </span>
+              </div>
+
+              {/* Countdown - Design minimal */}
+              <div className="flex items-center gap-4">
+                <span className="hidden md:block text-gray-400 text-xs uppercase tracking-wider font-medium">
+                  Launch in
+                </span>
+                <div className="flex items-center gap-3 font-mono text-sm">
+                  <div className="flex items-center gap-1">
+                    <span className="text-white font-medium tabular-nums">
+                      {formatNumber(timeLeft.days)}
+                    </span>
+                    <span className="text-gray-500 text-xs">d</span>
+                  </div>
+                  
+                  <div className="w-px h-3 bg-gray-700"></div>
+                  
+                  <div className="flex items-center gap-1">
+                    <span className="text-white font-medium tabular-nums">
+                      {formatNumber(timeLeft.hours)}
+                    </span>
+                    <span className="text-gray-500 text-xs">h</span>
+                  </div>
+                  
+                  <div className="w-px h-3 bg-gray-700"></div>
+                  
+                  <div className="flex items-center gap-1">
+                    <span className="text-white font-medium tabular-nums">
+                      {formatNumber(timeLeft.minutes)}
+                    </span>
+                    <span className="text-gray-500 text-xs">m</span>
+                  </div>
+                  
+                  <div className="w-px h-3 bg-gray-700"></div>
+                  
+                  <div className="flex items-center gap-1">
+                    <span className="text-[#c8e500] font-medium tabular-nums">
+                      {formatNumber(timeLeft.seconds)}
+                    </span>
+                    <span className="text-gray-500 text-xs">s</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Pulsante chiudi - più minimal */}
+            <button
+              onClick={() => setIsVisible(false)}
+              className="absolute right-0 p-1.5 text-gray-400 hover:text-white transition-colors duration-200 group"
+              aria-label="Close"
+            >
+              <X className="w-4 h-4 group-hover:rotate-90 transition-transform duration-200" />
+            </button>
+          </div>
+        </div>
+      </motion.div>
+    </AnimatePresence>
+  );
+};
+
+
 const Navbar = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [activeMenu, setActiveMenu] = useState(null);
@@ -405,6 +536,7 @@ useEffect(() => {
 
   return (
     <div className={"dark"}>
+       <TGEAnnouncementBar />
       <header
         className={`w-full border-b transition-colors duration-300 ${themeStyles.bg} ${themeStyles.border} ${themeStyles.text}`}
       >
