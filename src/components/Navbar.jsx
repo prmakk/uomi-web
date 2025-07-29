@@ -560,7 +560,7 @@ useEffect(() => {
                 <div className="relative" key={menuName}>
                   <button
                     onClick={(e) => handleDropdownClick(e, menuName)}
-                    className={`flex items-center gap-1.5 py-2 transition-colors duration-200 font-medium ${
+                    className={`flex items-center cursor-pointer gap-1.5 py-2 transition-colors duration-200 font-medium ${
                       activeMenu === menuName
                         ? "text-[#dffe00]"
                         : `${themeStyles.text} hover:text-[#dffe00]`
